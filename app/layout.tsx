@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Oxygen } from 'next/font/google';
 
 const oxygen = Oxygen({ weight: ['300', '400', '700'], subsets: ['latin'] })
@@ -48,9 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={'' + oxygen.className}>
-        <ScrollArea className="absolute h-screen">
-          {children}
-        </ScrollArea>
+        {children}
       </body>
     </html>
   );

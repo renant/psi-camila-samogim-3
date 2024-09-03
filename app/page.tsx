@@ -11,7 +11,7 @@ import logo from '../public/logo-cortado.png'
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-100 to-purple-100 ">
+    <div className="min-h-screen bg-gradient-to-b from-pink-100 to-purple-100">
       <header className="bg-white shadow-md">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center">
           {/* <h1 className="text-3xl font-bold text-purple-700">Camila Samogim</h1> */}
@@ -123,7 +123,7 @@ export default function LandingPage() {
               <p className="mb-4 ">Estou aqui para ajudar você e sua família. Entre em contato para agendar uma consulta ou tirar suas dúvidas.</p>
               <div className="flex flex-col justify-center">
                 <a href="https://api.whatsapp.com/send?phone=5511914175676">
-                  <Button className="bg-purple-600 hover:bg-purple-700 text-white h-10 w-96">Agende uma consulta</Button>
+                  <Button className="bg-purple-600 hover:bg-purple-700 text-white h-10 md:w-96">Agende uma consulta</Button>
                 </a>
                 <div className="flex items-center justify-evenly mt-6">
                   <a href="https://api.whatsapp.com/send?phone=5511914175676" target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700">
