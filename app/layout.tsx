@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 		"orientação de pais",
 	],
 	openGraph: {
-		title: "Calculadora de Churrasco - Bora Churrasco!",
+		title: "Psi Camila Samogim - Psicóloga Infantil em Jundiaí",
 		description:
 			"Psicóloga Infantil em Jundiaí, atendimento para crianças e adolescentes, orientação de pais.",
 		url: "psicamilasamogim.com",
