@@ -33,18 +33,21 @@ export default function Galery() {
 	};
 
 	return (
-		<div className="mt-2 flex flex-wrap m-auto justify-center md:gap-4 gap-2">
+		<div className="grid grid-cols-2 gap-3 md:gap-4">
 			{images.map((src, index) => (
-				<Image
-					className="hover:opacity-30 cursor-pointer spect-square  rounded-2xl"
-					src={src}
-					onClick={() => openImageViewer(index)}
-					width={100}
-					height={100}
+				<div
 					key={src}
-					style={{ margin: "2px" }}
-					alt=""
-				/>
+					className="relative aspect-square overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+					onClick={() => openImageViewer(index)}
+				>
+					<Image
+						className="object-cover hover:scale-105 transition-transform duration-300"
+						src={src}
+						fill
+						sizes="(max-width: 768px) 45vw, 280px"
+						alt=""
+					/>
+				</div>
 			))}
 
 			{isViewerOpen && (
