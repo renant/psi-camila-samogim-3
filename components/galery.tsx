@@ -1,7 +1,8 @@
 "use client";
+
 import { useCallback, useState } from "react";
 import ImageViewer from "react-simple-image-viewer";
-
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 export default function Galery() {
@@ -33,12 +34,30 @@ export default function Galery() {
 	};
 
 	return (
-		<div className="grid grid-cols-2 gap-3 md:gap-4">
+		<motion.div
+			className="grid grid-cols-2 gap-3 md:gap-4"
+			initial="hidden"
+			whileInView="visible"
+			viewport={{ once: true, amount: 0.2 }}
+			variants={{
+				visible: {
+					transition: { staggerChildren: 0.08 },
+				},
+			}}
+		>
 			{images.map((src, index) => (
-				<div
+				<motion.div
 					key={src}
 					className="relative aspect-square overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-md transition-shadow cursor-pointer"
 					onClick={() => openImageViewer(index)}
+					variants={{
+						hidden: { opacity: 0, y: 16 },
+						visible: {
+							opacity: 1,
+							y: 0,
+							transition: { duration: 0.5, ease: "easeOut" },
+						},
+					}}
 				>
 					<Image
 						className="object-cover hover:scale-105 transition-transform duration-300"
@@ -47,7 +66,7 @@ export default function Galery() {
 						sizes="(max-width: 768px) 45vw, 280px"
 						alt=""
 					/>
-				</div>
+				</motion.div>
 			))}
 
 			{isViewerOpen && (
@@ -62,6 +81,6 @@ export default function Galery() {
 					closeOnClickOutside={true}
 				/>
 			)}
-		</div>
+		</motion.div>
 	);
 }
